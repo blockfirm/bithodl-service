@@ -1,0 +1,26 @@
+{
+  "name": "bithodl-service",
+  "version": "1.0.0",
+  "description": "Bitcore service to expose necessary endpoints for the BitHodl app.",
+  "main": "src/Service.js",
+  "scripts": {
+    "test": "node_modules/.bin/nyc node_modules/.bin/_mocha -- recursive",
+    "lint": "./node_modules/.bin/eslint --ext .js src/ test/"
+  },
+  "author": " <timothy.ejohansson@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blockfirm/bithodl-service.git"
+  },
+  "dependencies": {
+    "bitcore-lib": "^0.14.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.7.1",
+    "mocha": "^3.5.3",
+    "nyc": "^11.3.0",
+    "proxyquire": "^1.8.0",
+    "sinon": "^4.0.0"
+  }
+}
