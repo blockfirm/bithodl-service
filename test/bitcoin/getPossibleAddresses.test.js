@@ -5,7 +5,7 @@ const bitcore = require('bitcore-lib');
 
 const fakeConfig = {
   scan: {
-    startDate: '10 September, 2017',
+    startDate: '10 September, 2017, 00:00 GMT+02:00',
     lookaheadYears: 1
   }
 };
