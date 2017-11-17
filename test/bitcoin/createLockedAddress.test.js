@@ -20,7 +20,7 @@ describe('bitcoin/createLockedAddress.js', () => {
     });
 
     it('does not modify the input arguments', () => {
-      const unlockDate = new Date('25 October, 2017');
+      const unlockDate = new Date('25 October, 2017, 00:00 GMT+02:00');
       const expectedPublicKey = publicKey.toString();
       const expectedUnlockDate = unlockDate.toString();
 
@@ -34,7 +34,7 @@ describe('bitcoin/createLockedAddress.js', () => {
     });
 
     it('returns an object', () => {
-      const unlockDate = new Date('25 October, 2017');
+      const unlockDate = new Date('25 October, 2017, 00:00 GMT+02:00');
       const address = createLockedAddress(publicKey, unlockDate);
 
       assert.equal(typeof address, 'object');
@@ -45,7 +45,7 @@ describe('bitcoin/createLockedAddress.js', () => {
       let returnObject;
 
       beforeEach(() => {
-        unlockDate = new Date('25 October, 2017');
+        unlockDate = new Date('25 October, 2017, 00:00 GMT+02:00');
         returnObject = createLockedAddress(publicKey, unlockDate);
       });
 
@@ -67,19 +67,19 @@ describe('bitcoin/createLockedAddress.js', () => {
       let returnObject;
 
       beforeEach(() => {
-        unlockDate = new Date('25 October, 2017, 01:20');
+        unlockDate = new Date('25 October, 2017, 01:20 GMT+02:00');
         returnObject = createLockedAddress(publicKey, unlockDate);
       });
 
       it('enforces the lock date to full hours', () => {
-        const expectedUnlockDate = new Date('25 October, 2017, 01:00');
+        const expectedUnlockDate = new Date('25 October, 2017, 01:00 GMT+02:00');
 
         assert.equal(returnObject.unlockTimestamp, expectedUnlockDate.getTime() / 1000);
         assert.equal(returnObject.hash, '2N6cvfB4NAPrTMkFrYsezjXfEKZmRVhJi3q');
       });
 
       it('does not modify the input date', () => {
-        const expected = new Date('25 October, 2017, 01:20').toString();
+        const expected = new Date('25 October, 2017, 01:20 GMT+02:00').toString();
         const actual = unlockDate.toString();
 
         assert.equal(actual, expected);

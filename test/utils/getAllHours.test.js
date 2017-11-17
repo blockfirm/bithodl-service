@@ -11,21 +11,21 @@ describe('utils/getAllHours.js', () => {
     });
 
     it('returns an array', () => {
-      const start = new Date('25 October 1989');
-      const end = new Date('26 October 1989');
+      const start = new Date('25 October 1989, 00:00 GMT+02:00');
+      const end = new Date('26 October 1989, 00:00 GMT+02:00');
       const hours = getAllHours(start, end);
 
       assert(Array.isArray(hours));
     });
 
     it('does not modify the input arguments', () => {
-      const start = new Date('25 October 1989');
-      const end = new Date('26 October 1989');
+      const start = new Date('25 October 1989, 00:00 GMT+02:00');
+      const end = new Date('26 October 1989, 00:00 GMT+02:00');
 
       getAllHours(start, end);
 
-      assert.equal(start.toString(), new Date('25 October 1989').toString());
-      assert.equal(end.toString(), new Date('26 October 1989').toString());
+      assert.equal(start.toString(), new Date('25 October 1989, 00:00 GMT+02:00').toString());
+      assert.equal(end.toString(), new Date('26 October 1989, 00:00 GMT+02:00').toString());
     });
 
     describe('when passing the dates 25 Oct and 26 Oct', () => {
@@ -33,8 +33,8 @@ describe('utils/getAllHours.js', () => {
       let end;
 
       beforeEach(() => {
-        start = new Date('25 October 1989');
-        end = new Date('26 October 1989');
+        start = new Date('25 October 1989, 00:00 GMT+02:00');
+        end = new Date('26 October 1989, 00:00 GMT+02:00');
       });
 
       it('returns 24 dates', () => {

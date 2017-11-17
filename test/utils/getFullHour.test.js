@@ -11,14 +11,14 @@ describe('utils/getFullHour.js', () => {
     });
 
     it('returns a date', () => {
-      const inputDate = new Date('25 October 1989, 01:20');
+      const inputDate = new Date('25 October 1989, 01:20 GMT+02:00');
       const returnDate = getFullHour(inputDate);
 
       assert(returnDate instanceof Date);
     });
 
     it('does not modify the input argument', () => {
-      const inputDate = new Date('25 October 1989, 01:20:19');
+      const inputDate = new Date('25 October 1989, 01:20:19 GMT+02:00');
       const expected = inputDate.toString();
 
       getFullHour(inputDate);
@@ -29,8 +29,8 @@ describe('utils/getFullHour.js', () => {
     });
 
     it('returns the full hour', () => {
-      const inputDate = new Date('25 October 1989, 01:20:19');
-      const expected = new Date('25 October 1989, 01:00:00');
+      const inputDate = new Date('25 October 1989, 01:20:19 GMT+02:00');
+      const expected = new Date('25 October 1989, 01:00:00 GMT+02:00');
       const actual = getFullHour(inputDate);
 
       assert.equal(actual.toString(), expected.toString());
@@ -38,8 +38,8 @@ describe('utils/getFullHour.js', () => {
 
     describe('when the input date is already a full hour', () => {
       it('returns the same date', () => {
-        const inputDate = new Date('25 October 1989, 01:00:00');
-        const expected = new Date('25 October 1989, 01:00:00');
+        const inputDate = new Date('25 October 1989, 01:00:00 GMT+02:00');
+        const expected = new Date('25 October 1989, 01:00:00 GMT+02:00');
         const actual = getFullHour(inputDate);
 
         assert.equal(actual.toString(), expected.toString());
