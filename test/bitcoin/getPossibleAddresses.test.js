@@ -46,7 +46,8 @@ describe('bitcoin/getPossibleAddresses.js', () => {
       describe('when startDate is 10 Sep, 2017 and lookaheadYears is 1 year', () => {
         let returnValue;
 
-        before(() => {
+        before(function () {
+          this.timeout(60 * 1000); // Increase timeout to 60 seconds.
           returnValue = getPossibleAddresses(publicKey);
         });
 
