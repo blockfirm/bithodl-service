@@ -36,7 +36,7 @@ describe('bitcoin/getPossibleAddresses.js', () => {
 
       before(() => {
         const today = new Date('25 October, 2017, 00:00 GMT+02:00');
-        clock = sinon.useFakeTimers(today);
+        clock = sinon.useFakeTimers(today.getTime());
       });
 
       after(() => {
