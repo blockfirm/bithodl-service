@@ -1,0 +1,7 @@
+.github/
+.nyc_output/
+.editorconfig
+.eslintrc
+.travis.yml
+test/
+contributing.json
