@@ -5,6 +5,7 @@
   "main": "src/Service.js",
   "scripts": {
     "test": "node_modules/.bin/nyc node_modules/.bin/_mocha -- recursive",
+    "coverage": "node_modules/.bin/nyc report --reporter=text-lcov | node_modules/.bin/coveralls",
     "lint": "./node_modules/.bin/eslint --ext .js src/ test/"
   },
   "author": " <timothy.ejohansson@gmail.com>",
@@ -17,6 +18,7 @@
     "bitcore-lib": "^0.14.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "eslint": "^4.7.1",
     "mocha": "^3.5.3",
     "nyc": "^11.3.0",
