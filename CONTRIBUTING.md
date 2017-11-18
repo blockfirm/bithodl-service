@@ -75,7 +75,7 @@ follow our [test conventions](#test-conventions) when writing them.
 Aim for 100% code coverage when writing tests. Run the following command to
 display the current code coverage:
 
-	$ npm run test
+	$ npm test
 
 ## Releases
 
