@@ -10,11 +10,12 @@ describe('utils/toUnixTimestamp.js', () => {
       assert.equal(actual, expected);
     });
 
-    it('returns a number', () => {
+    it('returns an integer', () => {
       const inputDate = new Date('25 October 1989, 01:20 GMT+01:00');
       const returnValue = toUnixTimestamp(inputDate);
 
       assert.equal(typeof returnValue, 'number');
+      assert(Number.isInteger(returnValue));
     });
 
     it('does not modify the input argument', () => {
