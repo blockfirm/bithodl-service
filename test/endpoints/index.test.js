@@ -7,6 +7,12 @@ describe('endpoints/index.js', () => {
   });
 
   describe('endpoints', () => {
+    describe('#estimateFee', () => {
+      it('is a function', () => {
+        assert.equal(typeof endpoints.estimateFee, 'function');
+      });
+    });
+
     describe('#getAddresses', () => {
       it('is a function', () => {
         assert.equal(typeof endpoints.getAddresses, 'function');

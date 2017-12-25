@@ -18,6 +18,19 @@ describe('config.js', () => {
           assert.equal(config.bitcoin.network, 'testnet');
         });
       });
+
+      describe('.fee', () => {
+        it('is an object', () => {
+          assert.equal(typeof config.bitcoin.fee, 'object');
+        });
+
+        describe('.numberOfBlocks', () => {
+          it('equals 3', () => {
+            assert.equal(typeof config.bitcoin.fee.numberOfBlocks, 'number');
+            assert.equal(config.bitcoin.fee.numberOfBlocks, 3);
+          });
+        });
+      });
     });
 
     describe('.api', () => {

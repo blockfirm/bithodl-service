@@ -132,6 +132,15 @@ describe('service.js', () => {
         assert(fakeApp.get.calledWithMatch('/address/:address/utxos'));
       });
 
+      it('registers the route GET /fee/estimate', () => {
+        const service = new Service({});
+
+        service.setupRoutes(fakeApp);
+
+        assert(fakeApp.get.called);
+        assert(fakeApp.get.calledWithMatch('/fee/estimate'));
+      });
+
       it('registers the route POST /transaction', () => {
         const service = new Service({});
 
@@ -144,7 +153,7 @@ describe('service.js', () => {
       it('wraps each endpoint with wrapEndpoint()', () => {
         const service = new Service({});
         service.setupRoutes(fakeApp);
-        assert(wrapEndpointSpy.calledThrice);
+        assert.equal(wrapEndpointSpy.callCount, 4);
       });
     });
 

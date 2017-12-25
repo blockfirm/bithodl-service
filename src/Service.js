@@ -33,6 +33,7 @@ Service.prototype.getPublishEvents = function () {
 Service.prototype.setupRoutes = function (app) {
   app.get('/public-key/:publicKey/addresses', wrapEndpoint(endpoints.getAddresses, this));
   app.get('/address/:address/utxos', wrapEndpoint(endpoints.getUnspentOutputs, this));
+  app.get('/fee/estimate', wrapEndpoint(endpoints.estimateFee, this));
   app.post('/transaction', wrapEndpoint(endpoints.postTransaction, this));
 };
 

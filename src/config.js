@@ -1,6 +1,10 @@
 const config = {
   bitcoin: {
-    network: 'testnet' // 'livenet' or 'testnet'
+    network: 'testnet', // 'livenet' or 'testnet'
+    fee: {
+      // Number of blocks to use when estimating the fee.
+      numberOfBlocks: 3
+    }
   },
   api: {
     version: 'v1'
