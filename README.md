@@ -51,6 +51,18 @@ Returns the unspent outputs for the given address.
 **Returns**  
 Returns the unspent outputs as a JSON array.
 
+### `GET` /v1/fee/estimate  
+Estimates the transaction fee based on the fees from the last 3 blocks.
+
+**Returns**  
+Returns the estimated fee per kilobyte in BTC, e.g.
+
+```json
+{
+    "feesPerKilobyte": 0.0000395
+}
+```
+
 ### `POST` /v1/transaction  
 Broadcasts a transaction to the Bitcoin network. Body must be a serialized transaction in raw format
 (https://bitcoin.org/en/developer-reference#raw-transaction-format).
