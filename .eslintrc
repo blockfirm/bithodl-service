@@ -37,7 +37,13 @@
     "jsx-quotes": ["error", "prefer-single"],
     "key-spacing": ["error", { "mode": "strict", "beforeColon": false, "afterColon": true }],
     "keyword-spacing": ["error", { "before": true, "after": true }],
-    "lines-around-comment": ["error", { "beforeBlockComment": true, "afterBlockComment": false, "beforeLineComment": true,  "afterLineComment": false }],
+    "lines-around-comment": ["error", {
+      "beforeBlockComment": true,
+      "afterBlockComment": false,
+      "beforeLineComment": true,
+      "afterLineComment": false,
+      "allowBlockStart": true
+    }],
     "max-depth": ["error", 3],
     "max-lines": ["error", 150],
     "max-params": ["error", 3],
