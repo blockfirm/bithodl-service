@@ -63,12 +63,14 @@ describe('endpoints/estimateFee.js', () => {
       });
     });
 
-    it('calls response.json() with an object with the fee', () => {
+    it('calls response.json() with an object with the fee in satoshis per byte', () => {
       const returnedPromise = estimateFee.call(thisArg, fakeRequest, fakeResponse);
+      const btcPerByte = fakeFee / 1000;
+      const satoshisPerByte = Math.round(btcPerByte * 100000000);
 
       return returnedPromise.then(() => {
         assert(fakeResponse.json.called);
-        assert(fakeResponse.json.calledWithMatch({ feesPerKilobyte: fakeFee }));
+        assert(fakeResponse.json.calledWithMatch({ satoshisPerByte }));
       });
     });
 
@@ -89,23 +91,6 @@ describe('endpoints/estimateFee.js', () => {
           .catch((error) => {
             assert(error instanceof HttpInternalServerError);
           });
-      });
-    });
-
-    describe('when node.services.bitcoind.estimateFee(numberOfBlocks, callback) does not callbacks an error', () => {
-      it('calls response.json() with the second callback argument as feesPerKilobyte', () => {
-        const fakeArgument = 'bfc1fab4-c649-476d-9627-9fca6c6fcb34';
-
-        fakeNode.services.bitcoind.estimateFee = sinon.spy((numberOfBlocks, callback) => {
-          callback(null, fakeArgument);
-        });
-
-        const returnedPromise = estimateFee.call(thisArg, fakeRequest, fakeResponse);
-
-        return returnedPromise.then(() => {
-          assert(fakeResponse.json.calledOnce);
-          assert(fakeResponse.json.calledWith({ feesPerKilobyte: fakeArgument }));
-        });
       });
     });
   });

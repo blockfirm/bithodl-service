@@ -55,11 +55,11 @@ Returns the unspent outputs as a JSON array.
 Estimates the transaction fee based on the fees from the last 3 blocks.
 
 **Returns**  
-Returns the estimated fee per kilobyte in BTC, e.g.
+Returns the estimated fee per byte in satoshis, e.g.
 
 ```json
 {
-    "feesPerKilobyte": 0.0000395
+    "satoshisPerByte": 4
 }
 ```
 

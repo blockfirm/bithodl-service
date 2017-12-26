@@ -5,16 +5,19 @@ function estimateFee(request, response) {
   const numberOfBlocks = config.bitcoin.fee.numberOfBlocks;
 
   return new Promise((resolve, reject) => {
-    this.node.services.bitcoind.estimateFee(numberOfBlocks, (error, feesPerKilobyte) => {
+    this.node.services.bitcoind.estimateFee(numberOfBlocks, (error, btcPerKilobyte) => {
       if (error) {
         return reject(
           new HttpInternalServerError(error.message)
         );
       }
 
-      response.json({ feesPerKilobyte });
+      const btcPerByte = btcPerKilobyte / 1000;
+      const satoshisPerByte = Math.round(btcPerByte * 100000000);
 
-      return resolve(feesPerKilobyte);
+      response.json({ satoshisPerByte });
+
+      resolve();
     });
   });
 }
