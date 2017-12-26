@@ -1,6 +1,6 @@
 {
   "name": "bithodl-service",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Bitcore service to expose necessary endpoints for the BitHodl app.",
   "main": "src/Service.js",
   "scripts": {
