@@ -2,7 +2,8 @@ const config = {
   bitcoin: {
     network: 'testnet', // 'livenet' or 'testnet'
     fee: {
-      // Number of blocks to use when estimating the fee.
+      // The maximum number of blocks a transaction should have to wait before it is
+      // predicted to be included in a block. Has to be between 2 and 25 blocks.
       numberOfBlocks: 3
     }
   },
