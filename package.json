@@ -5,7 +5,7 @@
   "main": "src/Service.js",
   "scripts": {
     "test": "node_modules/.bin/nyc node_modules/.bin/_mocha -- recursive",
-    "coverage": "node_modules/.bin/nyc report --reporter=text-lcov | node_modules/.bin/coveralls",
+    "coveralls": "node_modules/.bin/nyc report --reporter=text-lcov | node_modules/.bin/coveralls",
     "lint": "./node_modules/.bin/eslint --ext .js src/ test/"
   },
   "author": "Timothy Engqvist Johansson <timothy.ejohansson@gmail.com>",
