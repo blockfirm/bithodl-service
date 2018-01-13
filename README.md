@@ -80,6 +80,27 @@ Errors are returned as JSON in the following format:
 }
 ```
 
+## Use with testnet
+
+During development and testing it is recommended to use the testnet network. By doing so you can
+use testnet coins and don't risk losing any real money. Running a testnet node is also much lighter
+than running a mainnet node.
+
+1. **Run the Bitcore node with testnet**
+
+  Open `bitcore-node.json` and set `network` to `testnet` instead of `mainnet`.
+
+2. **Configure the BitHodl Service to use testnet**
+
+  Open `node_modules/bithodl-service/src/config.js` and set `network` to `testnet` instead
+  of `mainnet`.
+
+3. **Configure the BitHodl app to use testnet**
+
+  You need to configure the app to use testnet and point it to your testnet node.
+  This requires you to build and run the app yourself.
+  Follow the instructions in the [BitHodl app repo](https://github.com/blockfirm/bithodl-app).
+
 ## Contributing
 
 Want to help us making BitHodl better? Great, but first read the
