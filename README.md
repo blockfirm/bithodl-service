@@ -88,18 +88,18 @@ than running a mainnet node.
 
 1. **Run the Bitcore node with testnet**
 
-  Open `bitcore-node.json` and set `network` to `testnet` instead of `mainnet`.
+    Open `bitcore-node.json` and set `network` to `testnet` instead of `mainnet`.
 
 2. **Configure the BitHodl Service to use testnet**
 
-  Open `node_modules/bithodl-service/src/config.js` and set `network` to `testnet` instead
-  of `mainnet`.
+    Open `node_modules/bithodl-service/src/config.js` and set `network` to `testnet` instead
+    of `mainnet`.
 
 3. **Configure the BitHodl app to use testnet**
 
-  You need to configure the app to use testnet and point it to your testnet node.
-  This requires you to build and run the app yourself.
-  Follow the instructions in the [BitHodl app repo](https://github.com/blockfirm/bithodl-app).
+    You need to configure the app to use testnet and point it to your testnet node.
+    This requires you to build and run the app yourself.
+    Follow the instructions in the [BitHodl app repo](https://github.com/blockfirm/bithodl-app).
 
 ## Contributing
 
