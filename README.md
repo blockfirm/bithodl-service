@@ -5,7 +5,7 @@ BitHodl Service
 [![Build Status](https://img.shields.io/travis/blockfirm/bithodl-service.svg?branch=master&style=flat-square)](https://travis-ci.org/blockfirm/bithodl-service)
 [![Coverage Status](https://img.shields.io/coveralls/blockfirm/bithodl-service.svg?style=flat-square)](https://coveralls.io/r/blockfirm/bithodl-service)
 
-[Bitcore](https://bitcore.io/) service to expose necessary endpoints for the BitHodl app.
+[Bitcore](https://bitcore.io/) service to expose necessary endpoints for the [BitHodl app](https://github.com/blockfirm/bithodl-app).
 
 ## Getting started
 
