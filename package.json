@@ -8,7 +8,9 @@
     "coveralls": "node_modules/.bin/nyc report --reporter=text-lcov | node_modules/.bin/coveralls",
     "lint": "./node_modules/.bin/eslint --ext .js src/ test/"
   },
-  "author": "Timothy Engqvist Johansson <timothy.ejohansson@gmail.com>",
+  "author": "Timothy Engqvist Johansson <timothy@blockfirm.se>",
+  "website": "https://bithodl.com",
+  "copyright": "© 2018 Blockfirm AB",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
