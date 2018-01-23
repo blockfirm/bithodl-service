@@ -1,6 +1,10 @@
+const proxyquire = require('proxyquire');
 const assert = require('assert');
 const bitcore = require('bitcore-lib');
-const createLockedAddress = require('../../src/bitcoin/createLockedAddress');
+
+const createLockedAddress = proxyquire('../../src/bitcoin/createLockedAddress', {
+  '../config': require('../configMock')
+});
 
 describe('bitcoin/createLockedAddress.js', () => {
   describe('createLockedAddress(publicKey, unlockDate)', () => {

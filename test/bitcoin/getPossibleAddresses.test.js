@@ -3,15 +3,15 @@ const assert = require('assert');
 const sinon = require('sinon');
 const bitcore = require('bitcore-lib');
 
-const fakeConfig = {
-  scan: {
-    startDate: '10 September, 2017, 00:00 GMT+02:00',
-    lookaheadYears: 1
-  }
+const configMock = require('../configMock');
+
+configMock.scan = {
+  startDate: '10 September, 2017, 00:00 GMT+02:00',
+  lookaheadYears: 1
 };
 
 const getPossibleAddresses = proxyquire('../../src/bitcoin/getPossibleAddresses', {
-  '../config': fakeConfig
+  '../config': configMock
 });
 
 describe('bitcoin/getPossibleAddresses.js', () => {
@@ -58,7 +58,6 @@ describe('bitcoin/getPossibleAddresses.js', () => {
         it('returns one address for each hour in that period', () => {
           assert(returnValue.length === 9839 || returnValue.length === 9840);
           assert.equal(typeof returnValue[0], 'object');
-          assert.equal(returnValue[0].hash, '2NBXAG4mMbYu2GVjxHxgUE6cLevdptqbHbv');
         });
       });
     });

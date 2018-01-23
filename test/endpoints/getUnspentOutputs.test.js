@@ -11,7 +11,8 @@ const getAddressUnspentOutputsSpy = sinon.spy(function () {
 });
 
 const getUnspentOutputs = proxyquire('../../src/endpoints/getUnspentOutputs', {
-  '../bitcoin/getAddressUnspentOutputs': getAddressUnspentOutputsSpy
+  '../bitcoin/getAddressUnspentOutputs': getAddressUnspentOutputsSpy,
+  '../config': require('../configMock')
 });
 
 describe('endpoints/getUnspentOutputs.js', () => {
