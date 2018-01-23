@@ -88,12 +88,12 @@ than running a mainnet node.
 
 1. **Run the Bitcore node with testnet**
 
-    Open `bitcore-node.json` and set `network` to `testnet` instead of `mainnet`.
+    Open `bitcore-node.json` and set `network` to `testnet` instead of `livenet`.
 
 2. **Configure the BitHodl Service to use testnet**
 
     Open `node_modules/bithodl-service/src/config.js` and set `network` to `testnet` instead
-    of `mainnet`.
+    of `livenet`.
 
 3. **Configure the BitHodl app to use testnet**
 

@@ -1,6 +1,6 @@
 const config = {
   bitcoin: {
-    network: 'testnet', // 'livenet' or 'testnet'
+    network: 'livenet', // 'livenet' or 'testnet'
     fee: {
       // The maximum number of blocks a transaction should have to wait before it is
       // predicted to be included in a block. Has to be between 2 and 25 blocks.
@@ -12,10 +12,10 @@ const config = {
   },
   scan: {
     // Date to start looking for BitHodl addresses from.
-    startDate: '10 September, 2017',
+    startDate: '21 January, 2018',
 
     // How many years to look into the future when scanning for BitHodl addresses.
-    lookaheadYears: 10
+    lookaheadYears: 4
   }
 };
 

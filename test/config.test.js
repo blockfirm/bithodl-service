@@ -13,9 +13,9 @@ describe('config.js', () => {
       });
 
       describe('.network', () => {
-        it('equals "testnet"', () => {
+        it('equals "livenet"', () => {
           assert.equal(typeof config.bitcoin.network, 'string');
-          assert.equal(config.bitcoin.network, 'testnet');
+          assert.equal(config.bitcoin.network, 'livenet');
         });
       });
 
@@ -52,18 +52,18 @@ describe('config.js', () => {
       });
 
       describe('.startDate', () => {
-        it('equals 10 September, 2017 when evaluated as a date', () => {
+        it('equals 21 January, 2018 when evaluated as a date', () => {
           const startDate = new Date(config.scan.startDate);
 
-          assert.equal(startDate.getDate(), 10);
-          assert.equal(startDate.getMonth(), 8);
-          assert.equal(startDate.getFullYear(), 2017);
+          assert.equal(startDate.getDate(), 21);
+          assert.equal(startDate.getMonth(), 0);
+          assert.equal(startDate.getFullYear(), 2018);
         });
       });
 
       describe('.lookaheadYears', () => {
-        it('equals 10', () => {
-          assert.strictEqual(config.scan.lookaheadYears, 10);
+        it('equals 4', () => {
+          assert.strictEqual(config.scan.lookaheadYears, 4);
         });
       });
     });
